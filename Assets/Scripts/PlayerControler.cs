@@ -37,7 +37,7 @@ public class PlayerControler : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector2 m = new Vector2(inputMovement.x * speed, body.velocity.y).normalized;
+        Vector2 m = new Vector2(inputMovement.x * speed, body.velocity.y);
         body.velocity = m;
 
         if (isJumping == true)
