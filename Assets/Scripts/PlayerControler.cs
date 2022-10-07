@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerController : MonoBehaviour
+public class PlayerControler : MonoBehaviour
 {
 
-    PlayerControls controls;
-
-    Vector2 move;
+    Vector2 inputMovement;
 
     private bool isJumping = false;
     private Rigidbody2D body;
@@ -17,11 +15,7 @@ public class PlayerController : MonoBehaviour
 
     void Awake()
     {
-        controls = new PlayerControls();
 
-        controls.Gameplay.Jump.performed += ctx => Jump();
-        controls.Gameplay.Move.performed += ctx => move = ctx.ReadValue<Vector2>();
-        controls.Gameplay.Move.canceled += ctx => move = Vector2.zero;
     }
 
     void Start()
@@ -30,9 +24,20 @@ public class PlayerController : MonoBehaviour
         Debug.Log("coucou");
     }
 
+    public void OnMove(InputAction.CallbackContext context)
+    {
+        inputMovement = context.ReadValue<Vector2>();
+        Debug.Log("cc");
+    }
+
+    public void OnJump(InputAction.CallbackContext context)
+    {
+        isJumping = context.action.triggered;
+    }
+
     private void FixedUpdate()
     {
-        Vector2 m = new Vector2(move.x * speed, body.velocity.y);
+        Vector2 m = new Vector2(inputMovement.x * speed, body.velocity.y).normalized;
         body.velocity = m;
 
         if (isJumping == true)
@@ -42,22 +47,4 @@ public class PlayerController : MonoBehaviour
             isJumping = false;
         }
     }
-
-
-
-    public void Jump()
-    {
-        isJumping = true;
-    }
-
-    private void OnEnable()
-    {
-        controls.Gameplay.Enable();
-    }
-
-    private void OnDisable()
-    {
-        controls.Gameplay.Disable();
-    }
-
 }
