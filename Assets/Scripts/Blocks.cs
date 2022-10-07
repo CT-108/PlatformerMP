@@ -5,17 +5,21 @@ using UnityEngine;
 public class Blocks : MonoBehaviour
 {
 
-    [SerializeField] private int Speed;
+    public GameObject blockManager;
+    float testWait;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        blockManager = GameObject.Find("BlockManager");
+        Debug.Log("salam j'ai spawn");
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        transform.position += Vector3.down * Speed * Time.deltaTime;
+        transform.position += Vector3.down * blockManager.GetComponent<BlockManager>().blockSpeed * Time.deltaTime;
+
+        //transform.position += Vector3.down * blockManager.GetComponent<BlockManager>().blockSpeed * Time.deltaTime;
     }
 }

@@ -431,10 +431,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f9b0511855b7174081fe70256495c31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fallSpeed: 3
+  blockSpeed: 0
+  SpawnRate: 4
   Blocks:
   - {fileID: 5339833888642334450, guid: 1d1118dceffc24c4ba017d1575c95fd8, type: 3}
   - {fileID: 9018177913661600713, guid: ca4cc6487aad8c14c96bfb33b957c380, type: 3}
-  SpawnRate: 2
 --- !u!4 &1122911491
 Transform:
   m_ObjectHideFlags: 0
@@ -590,7 +592,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a000943cceef734fb90b4dabc848a28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 0
+  blockManager: {fileID: 0}
 --- !u!4 &1534728178
 Transform:
   m_ObjectHideFlags: 0

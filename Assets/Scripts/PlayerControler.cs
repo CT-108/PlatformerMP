@@ -13,6 +13,9 @@ public class PlayerControler : MonoBehaviour
     [SerializeField] float speed;
     [SerializeField] float jumpHeight;
 
+    bool grounded;
+    int timesJumped;
+
     void Awake()
     {
 
@@ -26,8 +29,7 @@ public class PlayerControler : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext context)
     {
-        inputMovement = context.ReadValue<Vector2>();
-        Debug.Log("cc");
+        inputMovement = context.ReadValue<Vector2>();    
     }
 
     public void OnJump(InputAction.CallbackContext context)
@@ -42,7 +44,10 @@ public class PlayerControler : MonoBehaviour
 
         if (isJumping == true)
         {
-            body.velocity = new Vector2(body.velocity.x, jumpHeight);
+            Vector2 jump = new Vector2(body.velocity.x, jumpHeight).normalized;
+            print(jump);
+            //jump.Normalize();
+            body.velocity = jump*jumpHeight;
             Debug.Log("coucou2");
             isJumping = false;
         }
