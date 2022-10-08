@@ -465,14 +465,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f9b0511855b7174081fe70256495c31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fallSpeed: 3
+  waiter: 5
+  fallSpeed: 1
   blockSpeed: 0
   spawnHeight: 11
   spawnTriggerPos: -8.2
   Blocks:
   - {fileID: 9018177913661600713, guid: 61763554c67a3b641b28cfbdaa11215b, type: 3}
   - {fileID: 9018177913661600713, guid: 42138c00a09bc784a8f41bc636766270, type: 3}
-  waiter: 0
 --- !u!4 &1122911491
 Transform:
   m_ObjectHideFlags: 0

@@ -5,6 +5,7 @@ using UnityEngine;
 public class BlockManager : MonoBehaviour
 {
     [SerializeField] private float waiter;
+    bool start = false;
     [Space]
     [Header("Speed")]
     [SerializeField] private float fallSpeed;
@@ -31,25 +32,27 @@ public class BlockManager : MonoBehaviour
     {
         StartCoroutine(startWait());
 
-        //Spawner
-        if (spawnAvailable)
+        if (start == true)
         {
-            int picker = Random.Range(0, Blocks.Count);
-            spawnPos = new Vector3(0, spawnHeight, 0);
-            GameObject newBlock = Instantiate(Blocks[picker], spawnPos, Quaternion.identity);
-            StartCoroutine(spawnTrigger(newBlock));
-            StartCoroutine(blockDestroy(newBlock));
-            spawnAvailable = false;
+            //Spawner
+            if (spawnAvailable)
+            {
+                int picker = Random.Range(0, Blocks.Count);
+                spawnPos = new Vector3(0, spawnHeight, 0);
+                GameObject newBlock = Instantiate(Blocks[picker], spawnPos, Quaternion.identity);
+                StartCoroutine(spawnTrigger(newBlock));
+                StartCoroutine(blockDestroy(newBlock));
+                spawnAvailable = false;
+            }
+
+            //Speed
+            speedTimer += Time.deltaTime;
+            float speed = Mathf.Log10(speedTimer);
+            if (speed < 0)
+                speed = 0;
+            blockSpeed = speed * fallSpeed;
+            Debug.Log(blockSpeed);
         }
-
-
-        //Speed
-        speedTimer += Time.deltaTime;
-        float speed = Mathf.Log10(speedTimer);
-        if (speed < 0)
-            speed = 0;
-        blockSpeed = speed * fallSpeed;
-        Debug.Log(blockSpeed);
     }
 
     IEnumerator spawnTrigger(GameObject block)
@@ -67,5 +70,7 @@ public class BlockManager : MonoBehaviour
     IEnumerator startWait()
     {
         yield return new WaitForSeconds(waiter);
+        start = true;
+
     }
 }
