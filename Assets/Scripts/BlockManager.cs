@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class BlockManager : MonoBehaviour
 {
+    [SerializeField] private float waiter;
+    [Space]
     [Header("Speed")]
     [SerializeField] private float fallSpeed;
     [HideInInspector] public float blockSpeed;
     private float speedTimer = 0;
     [Header("Spawner")]
-    [SerializeField] private float SpawnRate;
-    private float timer = 0;
+    [SerializeField] private float spawnHeight;
+    [SerializeField] private float spawnTriggerPos;
+    Vector3 spawnPos;
+    private bool spawnAvailable = true;
     [Space]
     [SerializeField] private List<GameObject> Blocks = new List<GameObject>();
 
@@ -19,28 +23,24 @@ public class BlockManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        int picker = Random.Range(0, Blocks.Count);
-        GameObject newBlock = Instantiate(Blocks[picker]);
-        Debug.Log(gameObject.name);
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Spawn
-        float spawn = SpawnRate - blockSpeed;
-        if (spawn < 4)
-            spawn = 4;
+        StartCoroutine(startWait());
 
-        if (timer > spawn)
+        //Spawner
+        if (spawnAvailable)
         {
             int picker = Random.Range(0, Blocks.Count);
-            GameObject newBlock = Instantiate(Blocks[picker]);
-            Destroy(newBlock, 10);
-            timer = 0;
+            spawnPos = new Vector3(0, spawnHeight, 0);
+            GameObject newBlock = Instantiate(Blocks[picker], spawnPos, Quaternion.identity);
+            StartCoroutine(spawnTrigger(newBlock));
+            StartCoroutine(blockDestroy(newBlock));
+            spawnAvailable = false;
         }
-
-        timer += Time.deltaTime;
 
 
         //Speed
@@ -50,5 +50,22 @@ public class BlockManager : MonoBehaviour
             speed = 0;
         blockSpeed = speed * fallSpeed;
         Debug.Log(blockSpeed);
+    }
+
+    IEnumerator spawnTrigger(GameObject block)
+    {
+        yield return new WaitUntil(() => block.transform.position.y <= spawnTriggerPos);
+            spawnAvailable = true;
+    }
+
+    IEnumerator blockDestroy(GameObject block)
+    {
+        yield return new WaitUntil(() => block.transform.position.y <= -20);
+            Destroy(block, 2);
+    }
+
+    IEnumerator startWait()
+    {
+        yield return new WaitForSeconds(waiter);
     }
 }
