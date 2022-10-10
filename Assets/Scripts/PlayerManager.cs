@@ -8,6 +8,7 @@ public class PlayerManager : MonoBehaviour
     public static PlayerManager instance;
 
     public GameObject BlockManager;
+    public GameObject BackgroundManager;
     PlayerInputManager playerInputManager;
 
     [Space]
@@ -44,6 +45,7 @@ public class PlayerManager : MonoBehaviour
             item.GetComponent<PlayerControler>().hasStarted = true;
         }
         BlockManager.GetComponent<BlockManager>().gameOn = true;
+        BackgroundManager.GetComponent<BackroundManager>().gameOn = true;
     }
 
     public void Spawn(GameObject player)

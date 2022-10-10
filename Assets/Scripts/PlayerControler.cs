@@ -65,7 +65,6 @@ public class PlayerControler : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Debug.Log(isGrounded);
         Vector2 m = new Vector2(inputMovement.x * speed, body.velocity.y);
         body.velocity = m;
 
