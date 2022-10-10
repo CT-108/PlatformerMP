@@ -25,9 +25,12 @@ public class PlayerControler : MonoBehaviour
     private bool isLedged;
 
     [HideInInspector] public PlayerInput playerInput;
+    [HideInInspector] public int playerID;
 
     BoxCollider2D boxCollider2D;
     Rigidbody2D rb;
+    Animator animator;
+    SpriteRenderer spriteRenderer;
 
     GameObject stickTo;
     Transform tempTrans;
@@ -39,6 +42,8 @@ public class PlayerControler : MonoBehaviour
         PlayerManager.instance.Spawn(gameObject);
         boxCollider2D = gameObject.GetComponent<BoxCollider2D>();
         rb = gameObject.GetComponent<Rigidbody2D>();
+        animator = gameObject.GetComponent<Animator>();
+        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
     }
 
     void Start()
@@ -55,7 +60,9 @@ public class PlayerControler : MonoBehaviour
     public void OnMove(InputAction.CallbackContext context)
     {
         if (hasStarted == true)
-            inputMovement = context.ReadValue<Vector2>();    
+        {
+            inputMovement = context.ReadValue<Vector2>();
+        }
     }
 
     public void OnJump(InputAction.CallbackContext context)
@@ -73,6 +80,22 @@ public class PlayerControler : MonoBehaviour
         Vector2 m = new Vector2(inputMovement.x * speed, body.velocity.y);
         body.velocity = m;
 
+        if (m.x > 0)
+        {
+            spriteRenderer.flipX = true;
+            animator.SetBool("Walking", true);
+        }
+        else if (m.x < 0)
+        {
+            spriteRenderer.flipX = false;
+            animator.SetBool("Walking", true);
+        }
+        else
+        {
+            animator.SetBool("Jumping", false);
+            animator.SetBool("Walking", false);
+        }
+
         HandleGrounded();
         HandleLedged();
         if (isLedged)
@@ -82,6 +105,17 @@ public class PlayerControler : MonoBehaviour
         else
         {
             RevertParent();
+        }
+
+        if (m.x > 0 && !isGrounded)
+        {
+            spriteRenderer.flipX = true;
+            animator.SetBool("Jumping", true);
+        }
+        else if (m.x < 0 && !isGrounded)
+        {
+            spriteRenderer.flipX = false;
+            animator.SetBool("Jumping", true);
         }
 
         if (isJumping == true && timesJumped <= 1)

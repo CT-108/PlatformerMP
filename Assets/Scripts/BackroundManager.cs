@@ -19,6 +19,7 @@ public class BackroundManager : MonoBehaviour
     [SerializeField] private float spawnTriggerPos;
     Vector3 spawnPos;
     private bool spawnAvailable = true;
+    private bool spawn2Available = true;
     [Space]
     [SerializeField] private List<GameObject> BG = new List<GameObject>();
     [SerializeField] private List<GameObject> BG2 = new List<GameObject>();
@@ -56,6 +57,12 @@ public class BackroundManager : MonoBehaviour
         spawnAvailable = true;
     }
 
+    IEnumerator spawnTrigger2(GameObject block)
+    {
+        yield return new WaitUntil(() => block.transform.position.y <= spawnTriggerPos);
+        spawn2Available = true;
+    }
+
     IEnumerator blockDestroy(GameObject block)
     {
         yield return new WaitUntil(() => block.transform.position.y <= -20);
@@ -86,13 +93,13 @@ public class BackroundManager : MonoBehaviour
     void BG2Manager()
     {
         //Spawner
-        if (spawnAvailable)
+        if (spawn2Available)
         {
             spawnPos = new Vector3(0, spawnHeight, 0);
             GameObject newBlock = Instantiate(BG2[0], spawnPos, Quaternion.identity);
-            StartCoroutine(spawnTrigger(newBlock));
+            StartCoroutine(spawnTrigger2(newBlock));
             StartCoroutine(blockDestroy(newBlock));
-            spawnAvailable = false;
+            spawn2Available = false;
         }
 
         //Speed
