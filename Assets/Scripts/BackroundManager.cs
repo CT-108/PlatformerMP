@@ -12,6 +12,7 @@ public class BackroundManager : MonoBehaviour
     [SerializeField] private float fallSpeedBG;
     [SerializeField] private float fallSpeedBG2;
     [HideInInspector] public float blockSpeed;
+    [HideInInspector] public float blockSpeed2;
     private float speedTimer = 0;
     [Header("Spawner")]
     [SerializeField] private float spawnHeight;
@@ -100,6 +101,6 @@ public class BackroundManager : MonoBehaviour
         float speed = Mathf.Log10(speedTimer);
         if (speed < 0)
             speed = 0;
-        blockSpeed = speed * fallSpeedBG2;
+        blockSpeed2 = speed * fallSpeedBG2;
     }
 }

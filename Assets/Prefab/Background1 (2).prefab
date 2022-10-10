@@ -97,4 +97,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45db10bd6d78bbd44877ceb531f2c929, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BGLayer: 1
   blockManager: {fileID: 0}
