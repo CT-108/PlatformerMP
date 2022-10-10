@@ -146,6 +146,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -15.61
       objectReference: {fileID: 0}
+    - target: {fileID: 6429900725137121323, guid: 5683d76dbaca1034182ca1cdca6caabb, type: 3}
+      propertyPath: m_Size.y
+      value: 0.7686445
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429900725137121323, guid: 5683d76dbaca1034182ca1cdca6caabb, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.02605918
+      objectReference: {fileID: 0}
     - target: {fileID: 7482083890675422428, guid: 5683d76dbaca1034182ca1cdca6caabb, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.018500112
@@ -1554,7 +1562,7 @@ MonoBehaviour:
   waiter: 3
   gameOn: 0
   fallSpeedBG: 1
-  fallSpeedBG2: 0.5
+  fallSpeedBG2: 0
   blockSpeed: 0
   blockSpeed2: 0
   spawnHeight: 10.41
