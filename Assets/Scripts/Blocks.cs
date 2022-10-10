@@ -6,7 +6,6 @@ public class Blocks : MonoBehaviour
 {
 
     public GameObject blockManager;
-    float testWait;
 
     // Start is called before the first frame update
     void Start()
