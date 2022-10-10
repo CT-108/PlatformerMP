@@ -47,6 +47,11 @@ public class PlayerControler : MonoBehaviour
         Debug.Log("coucou");
     }
 
+    private void OnDestroy()
+    {
+        Debug.Break();
+    }
+
     public void OnMove(InputAction.CallbackContext context)
     {
         if (hasStarted == true)
@@ -148,14 +153,19 @@ public class PlayerControler : MonoBehaviour
     //Make object 2 child of object 1.
     void stickToPlatform()
     {
-        tempTrans = gameObject.transform.parent;
-        gameObject.transform.parent = stickTo.transform;
+        GameObject go = new GameObject("sticky");
+        go.transform.position = transform.position;
+        go.transform.parent = stickTo.transform;
+        gameObject.transform.position = go.transform.position;
+
+        //tempTrans = gameObject.transform.parent;
+        //gameObject.transform.parent = stickTo.transform;
     }
 
     //Revert the parent of object 2.
     void RevertParent()
     {
-        gameObject.transform.parent = tempTrans;
+        //gameObject.transform.parent = tempTrans;
 
     }
 }
