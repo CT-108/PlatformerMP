@@ -6,6 +6,7 @@ public class BlockManager : MonoBehaviour
 {
     [SerializeField] private float waiter;
     bool start = false;
+    [HideInInspector] public bool gameOn = false;
     [Space]
     [Header("Speed")]
     [SerializeField] private float fallSpeed;
@@ -51,7 +52,6 @@ public class BlockManager : MonoBehaviour
             if (speed < 0)
                 speed = 0;
             blockSpeed = speed * fallSpeed;
-            Debug.Log(blockSpeed);
         }
     }
 
@@ -69,6 +69,7 @@ public class BlockManager : MonoBehaviour
 
     IEnumerator startWait()
     {
+        yield return new WaitUntil(() => gameOn == true);
         yield return new WaitForSeconds(waiter);
         start = true;
 

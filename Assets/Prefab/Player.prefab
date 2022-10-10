@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3130353022037496254}
   - component: {fileID: 1313061827946109365}
   - component: {fileID: 7448647855197926951}
-  - component: {fileID: 1891998491019672990}
+  - component: {fileID: 8536409668304704129}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -93,8 +93,36 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: f04a25a4-e51d-4fa5-baaa-5131ae22c26c
     m_ActionName: Player/Jump[/Keyboard/space,/XInputControllerWindows/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 1ce28dd5-1ab0-42f7-ac7a-e3761801679a
+    m_ActionName: LevelEditor/MousePos[/Mouse/position]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2d2148f2-dde6-4269-bd01-a221c1720263
+    m_ActionName: LevelEditor/MouseLeft[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 05d1e4d2-227b-43f7-bcb4-609905723136
+    m_ActionName: LevelEditor/MouseRight[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3130353022037496254}
+        m_TargetAssemblyTypeName: PlayerControler, Assembly-CSharp
+        m_MethodName: OnStart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 0f11475d-6c2d-41c4-bb51-4586deef8b23
+    m_ActionName: Player/StartGame[/XInputControllerWindows/start,/Keyboard/enter]
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: Keyboard
+  m_DefaultControlScheme: 
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
@@ -110,8 +138,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe969a0cfa3550d43985deddb3603590, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 2
+  deathYThreshold: -5.5
   speed: 10
-  jumpHeight: 14
+  jumpHeight: 15
+  hasStarted: 0
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  playerInput: {fileID: 0}
 --- !u!212 &1313061827946109365
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -180,13 +215,13 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 4
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 24173a2550fbb464da752563eb4111d4, type: 2}
   m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!70 &1891998491019672990
-CapsuleCollider2D:
+--- !u!61 &8536409668304704129
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -198,6 +233,16 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0749434, y: 0.00000011037897}
-  m_Size: {x: 1.1092731, y: 1.4473273}
-  m_Direction: 0
+  m_Offset: {x: 0.16586468, y: -0.13226187}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.7, y: 1.8}
+    newSize: {x: 0.16, y: 0.16}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.8364733, y: 1.2807496}
+  m_EdgeRadius: 0

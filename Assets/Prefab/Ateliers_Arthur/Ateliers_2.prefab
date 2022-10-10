@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2826499965495852434}
   - component: {fileID: 8530893537778898570}
   - component: {fileID: 4420879541765591185}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Platform (28)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,7 +122,7 @@ GameObject:
   - component: {fileID: 7889719582979114743}
   - component: {fileID: 4179126996949649120}
   - component: {fileID: 2216707729984319678}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Platform (23)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -233,7 +233,7 @@ GameObject:
   - component: {fileID: 8385978558071732157}
   - component: {fileID: 1472867217973761781}
   - component: {fileID: 1400357263594412492}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Platform (29)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -344,7 +344,7 @@ GameObject:
   - component: {fileID: 7875965299325577724}
   - component: {fileID: 553844826529688246}
   - component: {fileID: 8417492151819657900}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Platform (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -455,7 +455,7 @@ GameObject:
   - component: {fileID: 643548602132302099}
   - component: {fileID: 3458907355392407723}
   - component: {fileID: 2301983740620758008}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Platform (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -566,7 +566,7 @@ GameObject:
   - component: {fileID: 4601916883484872066}
   - component: {fileID: 170198771072570613}
   - component: {fileID: 4588578507353849021}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Platform (27)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -677,7 +677,7 @@ GameObject:
   - component: {fileID: 5009894671021860032}
   - component: {fileID: 312480165001399440}
   - component: {fileID: 211714850560674418}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Platform (31)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -788,7 +788,7 @@ GameObject:
   - component: {fileID: 665572230457930202}
   - component: {fileID: 3524686961384726287}
   - component: {fileID: 588786389886401316}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Platform (26)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -899,7 +899,7 @@ GameObject:
   - component: {fileID: 2752503227683162466}
   - component: {fileID: 7520234764390120964}
   - component: {fileID: 3413390921713676453}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Platform (24)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1010,7 +1010,7 @@ GameObject:
   - component: {fileID: 4490711285977949480}
   - component: {fileID: 3484260791600233598}
   - component: {fileID: 7740007891096978571}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Platform (25)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1121,7 +1121,7 @@ GameObject:
   - component: {fileID: 6892607161792999024}
   - component: {fileID: 5241380693268376221}
   - component: {fileID: 1600136359861084306}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Platform (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1232,7 +1232,7 @@ GameObject:
   - component: {fileID: 2299623591256916071}
   - component: {fileID: 667057402061774097}
   - component: {fileID: 1597969293682533121}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1343,7 +1343,7 @@ GameObject:
   - component: {fileID: 6216370066389496066}
   - component: {fileID: 7372329332908584231}
   - component: {fileID: 4493763953130562601}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Platform (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1454,7 +1454,7 @@ GameObject:
   - component: {fileID: 7774618830942429130}
   - component: {fileID: 8359401761178278088}
   - component: {fileID: 5878240114169855306}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Platform (30)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1565,7 +1565,7 @@ GameObject:
   - component: {fileID: 1636986101198670229}
   - component: {fileID: 858065263712368513}
   - component: {fileID: 1063100052545793521}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Platform (21)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1676,7 +1676,7 @@ GameObject:
   - component: {fileID: 7933469891103537024}
   - component: {fileID: 32237037593405761}
   - component: {fileID: 1307874232651997916}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Platform (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1786,7 +1786,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9125928500235737571}
   - component: {fileID: 1877008644102542410}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ateliers_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

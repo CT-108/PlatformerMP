@@ -19,7 +19,5 @@ public class Blocks : MonoBehaviour
     void FixedUpdate()
     {
         transform.position += Vector3.down * blockManager.GetComponent<BlockManager>().blockSpeed * Time.deltaTime;
-
-        //transform.position += Vector3.down * blockManager.GetComponent<BlockManager>().blockSpeed * Time.deltaTime;
     }
 }
