@@ -739,7 +739,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0f0b373ffc69a44b88e78edec5a448b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Clips: []
+  Clips:
+  - {fileID: 8300000, guid: d00cbc0738371cc4c90bf9b679e55c95, type: 3}
+  - {fileID: 8300000, guid: 4ff962ba1dc55f24390ef1c1cb0235e7, type: 3}
+  - {fileID: 8300000, guid: cab0ae60f1d6f0c4980b9871e769924c, type: 3}
+  - {fileID: 8300000, guid: c0e140d98cc630e428506007fea23527, type: 3}
+  - {fileID: 8300000, guid: d0bbbd25ffad73345be1c9b3080bf8cc, type: 3}
+  - {fileID: 8300000, guid: d11356ab7eacf3d40abb70faaab4513c, type: 3}
+  - {fileID: 8300000, guid: 64c012ad2e4d9b84a8e18584c4ffa0b9, type: 3}
+  - {fileID: 8300000, guid: 6d99601ea5118a44480cd10aa8c3e214, type: 3}
+  - {fileID: 8300000, guid: d4acaad8e24ff3a48be7d10d120c75c4, type: 3}
 --- !u!4 &832073473
 Transform:
   m_ObjectHideFlags: 0
