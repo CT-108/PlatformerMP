@@ -5,12 +5,12 @@ using UnityEngine;
 public class BG : MonoBehaviour
 {
     [SerializeField] int BGLayer;
-    public GameObject blockManager;
+    public GameObject backgroundManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        blockManager = GameObject.Find("BackgroundManager");
+        backgroundManager = GameObject.Find("BackgroundManager");
         Debug.Log("salam j'ai spawn");
     }
 
@@ -18,9 +18,9 @@ public class BG : MonoBehaviour
     void FixedUpdate()
     {
         if (BGLayer == 1)
-            transform.position += Vector3.down * blockManager.GetComponent<BackroundManager>().blockSpeed * Time.deltaTime;
+            transform.position += Vector3.down * backgroundManager.GetComponent<BackroundManager>().blockSpeed * Time.deltaTime;
 
         if (BGLayer == 2)
-            transform.position += Vector3.down * blockManager.GetComponent<BackroundManager>().blockSpeed2 * Time.deltaTime;
+            transform.position += Vector3.down * backgroundManager.GetComponent<BackroundManager>().blockSpeed2 * Time.deltaTime;
     }
 }

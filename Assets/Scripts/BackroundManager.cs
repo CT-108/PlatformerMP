@@ -88,9 +88,8 @@ public class BackroundManager : MonoBehaviour
         //Spawner
         if (spawnAvailable)
         {
-            int picker = Random.Range(0, BG2.Count);
             spawnPos = new Vector3(0, spawnHeight, 0);
-            GameObject newBlock = Instantiate(BG2[picker], spawnPos, Quaternion.identity);
+            GameObject newBlock = Instantiate(BG2[0], spawnPos, Quaternion.identity);
             StartCoroutine(spawnTrigger(newBlock));
             StartCoroutine(blockDestroy(newBlock));
             spawnAvailable = false;
